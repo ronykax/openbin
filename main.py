@@ -57,7 +57,7 @@ def create_paste(paste: PasteCreate, _: str = Depends(verify_token)):
     )
 
 @app.get("/{paste_id}", response_model=PasteResponse)
-def read_paste(paste_id: str, _: str = Depends(verify_token)):
+def read_paste(paste_id: str):
     conn = get_connection()
     row = conn.execute("SELECT * FROM pastes WHERE id = ?", (paste_id,)).fetchone()
     conn.close()
