@@ -3,6 +3,7 @@ A simple Pastebin API written in Python using FastAPI.
 
 | Method | Path    | Description                                               |
 |--------|---------|-----------------------------------------------------------|
+| GET    | `/ping` | Health check                                              |
 | POST   | `/`     | Create a new paste                                        |
 | GET    | `/[id]` | Read a paste                                              |
 | PUT    | `/[id]` | Update a paste                                            |

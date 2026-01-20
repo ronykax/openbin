@@ -22,6 +22,10 @@ app.add_middleware(
 def startup():
     init_db()
 
+@app.get("/ping")
+def ping(_: str = Depends(verify_token)):
+    return {"message": "pong"}
+
 def get_max_size() -> int:
     try:
         return int(os.environ.get("OPNBIN_MAX_SIZE", 1048576))
